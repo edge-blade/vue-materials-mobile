@@ -34,11 +34,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.css$/,
-        loader: 'css-loader'
+        loaders: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -49,7 +49,10 @@ module.exports = {
       },
       {
           test: /\.(eot|svg|ttf|woff|woff2)$/,
-          loader: 'file-loader?name=/fonts/[name].[ext]'
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]'
+          }
       }
     ]
   },
